@@ -62,9 +62,17 @@ class CatController extends Controller
     }
 
     /**
-     * @Route("/cat/edit", name="cat_edit")
+     * @Route("/cat/edit/{id}", name="cat_edit")
      */
-    public function editAction( Request $request ){
+    public function editAction( Request $request , $id){
+            $catRepository = $this->getDoctrine()->getRepository("AppBundle:Cat");
+            $cat = $catRepository->find($id);
 
+            $form = $this->createForm(CatType::class, $cat);
+
+            return $this->render('cat/create.html.twig',[
+                    'form' => $form->createView()
+                    ,'active' => 'cat_edit'
+                ]);
     }
 }
