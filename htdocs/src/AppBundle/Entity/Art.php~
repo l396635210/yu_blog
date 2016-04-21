@@ -1,0 +1,256 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Art
+ *
+ * @ORM\Table(name="art")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\ArtRepository")
+ */
+class Art
+{
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="cat_id", type="integer")
+     */
+    private $catId;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="title", type="string", length=30)
+     */
+    private $title;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="content", type="blob")
+     */
+    private $content;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="like_no", type="integer")
+     */
+    private $likeNo;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="tags", type="string", length=30)
+     */
+    private $tags;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="create_id", type="integer")
+     */
+    private $createId;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="create_time", type="datetime")
+     */
+    private $createTime;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="behalf", type="string", length=255)
+     */
+    private $behalf;
+    /**
+     * Get id
+     *
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set title
+     *
+     * @param string $title
+     *
+     * @return Art
+     */
+    public function setTitle($title)
+    {
+        $this->title = $title;
+
+        return $this;
+    }
+
+    /**
+     * Get title
+     *
+     * @return string
+     */
+    public function getTitle()
+    {
+        return $this->title;
+    }
+
+    /**
+     * Set content
+     *
+     * @param string $content
+     *
+     * @return Art
+     */
+    public function setContent($content)
+    {
+        $this->content = $content;
+
+        return $this;
+    }
+
+    /**
+     * Get content
+     *
+     * @return string
+     */
+    public function getContent()
+    {
+        return $this->content;
+    }
+
+    /**
+     * Set likeNo
+     *
+     * @param integer $likeNo
+     *
+     * @return Art
+     */
+    public function setLikeNo($likeNo)
+    {
+        $this->likeNo = $likeNo;
+
+        return $this;
+    }
+
+    /**
+     * Get likeNo
+     *
+     * @return int
+     */
+    public function getLikeNo()
+    {
+        return $this->likeNo;
+    }
+
+    /**
+     * Set tags
+     *
+     * @param string $tags
+     *
+     * @return Art
+     */
+    public function setTags($tags)
+    {
+        $this->tags = $tags;
+
+        return $this;
+    }
+
+    /**
+     * Get tags
+     *
+     * @return string
+     */
+    public function getTags()
+    {
+        return $this->tags;
+    }
+
+    /**
+     * Set createId
+     *
+     * @param integer $createId
+     *
+     * @return Art
+     */
+    public function setCreateId($createId)
+    {
+        $this->createId = $createId;
+
+        return $this;
+    }
+
+    /**
+     * Get createId
+     *
+     * @return int
+     */
+    public function getCreateId()
+    {
+        return $this->createId;
+    }
+
+    /**
+     * Set createTime
+     *
+     * @param \DateTime $createTime
+     *
+     * @return Art
+     */
+    public function setCreateTime($createTime)
+    {
+        $this->createTime = $createTime;
+
+        return $this;
+    }
+
+    /**
+     * Get createTime
+     *
+     * @return \DateTime
+     */
+    public function getCreateTime()
+    {
+        return $this->createTime;
+    }
+
+    /**
+     * Set behalf
+     *
+     * @param string $behalf
+     *
+     * @return Art
+     */
+    public function setBehalf($behalf)
+    {
+        $this->behalf = $behalf;
+
+        return $this;
+    }
+
+    /**
+     * Get behalf
+     *
+     * @return string
+     */
+    public function getBehalf()
+    {
+        return $this->behalf;
+    }
+}

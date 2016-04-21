@@ -1,0 +1,29 @@
+{% extends 'admin.html.twig' %}
+{% block body %}
+
+<table class="table table-condensed table table-striped">
+<thead>
+    <tr>
+        <th>#</th>
+        <th>名称</th>
+        <th>文章数</th>
+        <th>创建时间</th>
+        <th>操作</th>
+    </tr>
+</thead>
+<tbody>
+        {% for row in list %}
+        <tr>
+          <th scope="row">{{row.id}}</th>
+          <td>{{row.name}}</td>
+          <td>{{row.artCnt}}</td>
+          <td>{{row.createTime|date("Y年m月d日")}}</td>
+          <td class="text-exception">
+              <a href="{{ path( "cat_edit", { "id": row.id } ) }}" role="button" class="btn-sm btn-primary">编辑</a>
+              <a role="button" href="{{ path('cat_delete', { 'id':row.id }) }}" class="btn-sm btn-danger">删除</a>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+</table>
+{% endblock %}

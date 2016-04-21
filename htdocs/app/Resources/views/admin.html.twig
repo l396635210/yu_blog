@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}Welcome!{% endblock %}</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="//cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <link href="//cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="//cdn.bootcss.com/bootstrap/3.3.6/fonts/glyphicons-halflings-regular.svg" rel="stylesheet">
+    <link href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+    <style>
+        body,button, input, select, textarea,h1 ,h2, h3, h4, h5, h6 { font-family: Microsoft YaHei,Tahoma, Helvetica, Arial, "\5b8b\4f53", sans-serif;}
+    </style>
+    {% block stylesheets %} {% endblock %}
+
+</head>
+
+<body>
+<div class="page-header">
+    <h1 class="text-center">小于的blog
+        <small>开心每一天</small>
+    </h1>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+            <ul class="nav  nav-stacked  nav-pills">
+                <li class="nav-header">栏目管理</li>
+                <li class="{{ (active=='cat_list') ? 'active' }}"><a href="{{ path('cat_list') }}"><i class="icon-white icon-home"></i> 栏目列表</a></li>
+                <li class="{{ (active=='cat_create') ? 'active' }}"><a href="{{ path('cat_create') }}"><i class="icon-book"></i> 栏目添加</a></li>
+                <li class="nav-header">文章管理</li>
+                <li class="{{ (active=='art_list') ? 'active' }}"><a href="{{ path('art_list') }}"><i class="icon-user"></i> 文章列表</a></li>
+                <li class="{{ (active=='art_create') ? 'active' }}"><a href="{{ path('art_create') }}"><i class="icon-cog"></i> 文章添加</a></li>
+                <li class="nav-header">点赞管理</li>
+                <li class="{{ (active=='likeNo_list') ? 'active' }}"><a href="#"><i class="icon-user"></i> 点赞列表</a></li>
+                <li class="divider"></li>
+                <li class="{{ (active=='help') ? 'active' }}"><a href="#"><i class="icon-flag"></i> Help</a></li>
+            </ul>
+        </div>
+        <div class="col-md-9">
+            <div class="bs-example">
+                {% block body %}{% endblock %}
+            </div>
+        </div>
+    </div>
+</div><!-- /.container -->
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js"></script>
+
+{% block javascript %}{% endblock %}
+
+</body>
+</html>

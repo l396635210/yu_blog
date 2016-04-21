@@ -1,0 +1,24 @@
+{% extends 'regist.html.twig' %}
+
+{% block title %}Demo Application{% endblock %}
+{% block stylesheets %} {% endblock %}
+{% block content %}
+    {% block fos_user_content %}
+        {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <div class="form-group form-footer">
+            <div class="col-sm-offset-4 col-sm-8">
+                <button type="submit" class="btn btn-primary">注册</button>
+                <button type="reset" class="btn btn-default">重置</button>
+            </div>
+        </div>
+        {{ form_end(form) }}
+    {% endblock %}
+{% endblock %}
+{% block javascript %}
+<script>
+    (function(){
+        $("input[type=password]").addClass("form-control");
+    })()
+</script>
+{% endblock %}

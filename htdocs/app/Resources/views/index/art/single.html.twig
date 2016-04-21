@@ -1,0 +1,88 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <div class="container">
+        <div class="single">
+            <div class="single-top">
+                <img src="{{ art.behalf }}" alt="">
+            </div>
+            <div class="top-single">
+                <h2>{{ art.title }}</h2>
+                <div class="grid-single">
+                    <div class="single-one"><span><i> </i>{{ art.createTime|date('Y-m-d') }} </span></div>
+                    <div class="single-one"><span><a href="#"><i class="com"> </i>10l</a></span></div>
+                    <div class="single-one"><span><i class="four"> </i>{{ art.likeNo }}</span></div>
+                    <div class="clearfix"> </div>
+                </div>
+                <p class="eget">{{ art.content|raw }}</p>
+                <div class="single-middle">
+                    <ul class="social-share">
+                        <li><span>SHARE</span></li>
+                        <li><a href="#"><i> </i></a></li>
+                        <li><a href="#"><i class="tin"> </i></a></li>
+                        <li><a href="#"><i class="message"> </i></a></li>
+                    </ul>
+                    <a href="#"><i class="arrow"> </i></a>
+                    <div class="clearfix"> </div>
+                </div>
+                <div class="top-comments">
+                    <h3>10 Comments</h3>
+                    <div class="met">
+                        <div class="code-in">
+                            <p class="smith"><a href="#">Robert Smith</a> <span>05 march 2015, 15:20</span></p>
+                            <p class="reply"><a href="#"><i> </i>REPLY</a></p>
+                            <div class="clearfix"> </div>
+                        </div>
+                        <div class="comments-top-top">
+                            <div class="men">
+                                <img src="images/men.png" alt="">
+                            </div>
+                            <p class="men-it">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.The point of using Lorem Ipsum is that it has a more-or-less </p>
+                            <div class="clearfix"> </div>
+                        </div>
+                    </div>
+                    <div class="met met-in">
+                        <div class="code-in">
+                            <p class="smith"><a href="#">Robert Smith</a> <span>02 april 2015, 15:20</span></p>
+                            <div class="clearfix"> </div>
+                        </div>
+                        <div class="comments-top-top top-in">
+                            <div class="men">
+                                <img src="images/men.png" alt="">
+                            </div>
+                            <p class="men-it">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.The point of using Lorem Ipsum is that it has a more-or-less </p>
+                            <div class="clearfix"> </div>
+                        </div>
+                    </div>
+                    <div class="met">
+                        <div class="code-in">
+                            <p class="smith"><a href="#">Robert Smith</a> <span>18 may 2015, 15:20</span></p>
+                            <p class="reply"><a href="#"><i> </i>REPLY</a></p>
+                            <div class="clearfix"> </div>
+                        </div>
+                        <div class="comments-top-top">
+                            <div class="men">
+                                <img src="images/men.png" alt="">
+                            </div>
+                            <p class="men-it">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.The point of using Lorem Ipsum is that it has a more-or-less </p>
+                            <div class="clearfix"> </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="leave">
+                    <h3>Leave a comment</h3>
+                    <form>
+                        <div class="single-grid">
+                            <div class="single-us">
+                                <input type="text" value="Name" onfocus="this.value='';" onblur="if (this.value == '') {this.value = 'Name';}">
+                                <input type="text" value="E-mail" onfocus="this.value='';" onblur="if (this.value == '') {this.value = 'E-mail';}">
+                                <textarea value=" " onfocus="this.value='';" onblur="if (this.value == '') {this.value = 'Comment';}">Comment</textarea>
+                                <input type="submit" value="SEND">
+                            </div>
+
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus mattis semper nisl, vitae malesuada massa egestas a. Vestibulum vestibulum urna sapien, eu bibendum magna ornare non.</p>
+                        </div></form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

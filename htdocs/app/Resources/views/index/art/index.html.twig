@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <div class="container">
+        <div class="port-head">
+            <h3>Portfolio</h3>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum has been the industry's standard dummy text ever since, Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+        </div>
+        <div class="portfolio-bottom">
+            {% for row in list  %}
+            <div class="gallery-one two">
+                <div class="col-md-3 gallery-left two">
+                    <a href="{{ path('home_art', { id : row.id }) }}" class=" mask b-link-stripe b-animate-go   swipebox" title="Image Title">
+                        <img src="{{ row.behalf }}" alt="" class="img-responsive zoom-img">
+                    </a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        {# display navigation #}
+        <div class="navigation">
+            {{ knp_pagination_render(list) }}
+        </div>
+    </div>
+{% endblock %}

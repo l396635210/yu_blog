@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}Welcome!{% endblock %}</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="//cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <link href="//cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="//cdn.bootcss.com/bootstrap/3.3.6/fonts/glyphicons-halflings-regular.svg" rel="stylesheet">
+    <link href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="{{ asset('bundles/app/css/home/style.css') }}" rel="stylesheet">
+    <link href="{{ asset('bundles/app/css/home/swipebox.css') }}" rel="stylesheet">
+    <style>
+        body,button, input, select, textarea,h1 ,h2, h3, h4, h5, h6 { font-family: Microsoft YaHei,Tahoma, Helvetica, Arial, "\5b8b\4f53", sans-serif;}
+    </style>
+    {% block stylesheets %} {% endblock %}
+
+</head>
+<body>
+<div id="home" class="header">
+    {% block header %}
+    <div class="header-bottom">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html"><h1>小于的<span>blog</span></h1></a>
+            </div>
+            <span class="menu"></span>
+            <div class="top-menu">
+                <ul>
+                    <nav>
+                        <li><a class="active" href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="404.html">SERVICES</a></li>
+                        <li><a href="portfolio.html">PORTFOLIO</a></li>
+                        <li><a href="#blog" class="scroll">BLOG</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </nav>
+                </ul>
+            </div>
+            <!-- script for menu -->
+            <div class="clearfix"></div>
+        </div>
+    </div>
+    {% endblock %}
+</div>
+<div class="gallery services">
+    {% block body %}{% endblock %}
+</div>
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="{{ asset('bundles/app/js/home/jquery.flexisel.js') }}"></script>
+<script type="text/javascript" src="{{ asset('bundles/app/js/home/jquery.swipebox.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('bundles/app/js/home/jquery.wmuSlider.js') }}"></script>
+<script>
+    $(window).load(function() {
+        $("#flexiselDemo3").flexisel({
+            visibleItems:3,
+            animationSpeed: 1000,
+            autoPlay: true,
+            autoPlaySpeed: 3000,
+            pauseOnHover: true,
+            enableResponsiveBreakpoints: true,
+            responsiveBreakpoints: {
+                portrait: {
+                    changePoint:480,
+                    visibleItems:3
+                },
+                landscape: {
+                    changePoint:640,
+                    visibleItems:3
+                },
+                tablet: {
+                    changePoint:768,
+                    visibleItems:3
+                }
+            }
+        });
+
+    });
+    $( "span.menu" ).click(function() {
+        $( ".top-menu" ).slideToggle( "slow", function() {
+            // Animation complete.
+        });
+    });
+</script>
+{% block javascript %}{% endblock %}
+
+</body>
+</html>
